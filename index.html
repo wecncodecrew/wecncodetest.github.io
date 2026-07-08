@@ -42,7 +42,7 @@
         }
 
         .nav-content {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 1rem 1.5rem;
             display: flex;
@@ -70,13 +70,13 @@
 
         /* Container */
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
         section {
-            padding: 5rem 0;
+            padding: 6rem 0;
             border-bottom: 1px solid var(--border);
         }
         
@@ -89,10 +89,24 @@
             letter-spacing: -0.5px;
         }
 
-        /* Hero Section */
+        /* Hero Section (Updated with Image Support) */
         #hero {
-            padding: 10rem 0 6rem;
+            padding: 12rem 0 8rem;
             animation: fadeIn 1s ease-out;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Split into two columns */
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            #hero {
+                grid-template-columns: 1fr; /* Stack on small screens */
+                text-align: center;
+                gap: 2rem;
+            }
+            .hero-text { order: 1; }
+            .hero-image { order: 2; }
         }
 
         .status-badge {
@@ -122,6 +136,7 @@
         }
 
         .cta-buttons { display: flex; gap: 1rem; }
+        @media (max-width: 900px) { .cta-buttons { justify-content: center; } }
 
         .btn {
             padding: 0.75rem 1.5rem;
@@ -148,6 +163,24 @@
         .btn-secondary:hover {
             background-color: var(--bg-surface);
             border-color: var(--text-secondary);
+        }
+
+        /* Hero Image Container */
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9; /* Ensures the aspect ratio of the generated image is preserved */
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Important for preserving aspect ratio without distortion */
+            display: block;
         }
 
         /* Education & Skills Split */
@@ -268,15 +301,21 @@
 
     <div class="container">
         
-        <!-- Hero Section -->
+        <!-- Hero Section (Updated) -->
         <section id="hero">
-            <div class="status-badge">My Developer Portfolio</div>
-            <h1>Hey! <br> This is Nathan. </h1>
-            <p>I'm a CS student at Stanford specializing in Machine Learning and distributed infrastructure. I write clean code, optimize database queries, and build AI products that solve actual problems.</p>
-            <div class="cta-buttons">
-                <!-- Replace # with actual resume PDF link hosted in the repo -->
-                <a href="#" class="btn btn-primary">Download Resume</a> 
-                <a href="https://github.com/nathan-stanford-cs" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+            <div class="hero-text">
+                <div class="status-badge">🟢 Actively seeking Summer 2027 SWE Internships</div>
+                <h1>Building scalable<br>backend systems.</h1>
+                <p>I'm a CS student at Stanford specializing in Machine Learning and distributed infrastructure. I write clean code, optimize database queries, and build AI products that solve actual problems.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Download Resume</a> 
+                    <a href="https://github.com/nathan-stanford-cs" target="_blank" class="btn btn-secondary">GitHub Profile</a>
+                </div>
+            </div>
+            
+            <!-- Dynamic Collage Image -->
+            <div class="hero-image">
+                <img src="https://generative-images.google.com/image?id=8e4e94cc8b671a52b821f579ae7429b9" alt="A sophisticated collage representing Nathan's Computer Science journey. It merges views of the Stanford Quad, neural network architectures, distributed systems on AWS, and coding on a laptop, symbolizing visionary building.">
             </div>
         </section>
 
