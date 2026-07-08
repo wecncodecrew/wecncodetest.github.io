@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan | CS @ Stanford</title>
+    <style>
+        /* CSS Reset & Variables */
+        :root {
+            --bg-color: #0d1117; /* GitHub Dark Mode Base */
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent: #58a6ff; /* Neon Blue Accent */
+            --card-bg: #161b22;
+            --border: #30363d;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Layout & Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* Header / Hero Section */
+        header {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--border);
+            color: #ffffff;
+        }
+
+        /* Projects Section */
+        .section-title {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tag {
+            background-color: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Simple Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Hey, I'm Nathan 👋</h1>
+            <h2>Stanford CS | <span class="highlight">AI & Systems Engineer</span></h2>
+            <p>Currently a junior diving deep into Machine Learning and backend infrastructure. When I'm not debugging Python scripts or exploring GraphRAG architectures, I'm contributing to open-source micro-projects to democratize tech education. I build systems that turn complex data into actionable, high-impact products.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/nathan-stanford-cs" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                <a href="mailto:nathan@stanford.edu">Email Me</a>
+            </div>
+        </header>
+
+        <section>
+            <h2 class="section-title">Featured Work 🚀</h2>
+            
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>AI-Powered Graphing Calculator</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">Make.com</span>
+                    </div>
+                    <p>An intelligent calculator that interprets natural language math problems, builds the underlying equations, and renders interactive graphs in real-time. Automated data flow handled via Make workflows.</p>
+                    <a href="https://github.com/nathan-stanford-cs/ai-calculator" class="project-link" target="_blank">View Code &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Open-Source Mentorship Dashboard</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <p>A micro-project contribution to a larger EdTech initiative. Built a lightweight dashboard matching computer science students with industry mentors based on technical stack preferences.</p>
+                    <a href="https://github.com/nathan-stanford-cs/mentor-dash" class="project-link" target="_blank">View Code &rarr;</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>Predictive Market Models (CS229)</h3>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                    <p>My final project for Stanford's CS229. Trained a deep learning model to predict short-term volatility in tech stocks using sentiment analysis of financial news APIs.</p>
+                    <a href="https://github.com/nathan-stanford-cs/cs229-market-model" class="project-link" target="_blank">View Code &rarr;</a>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>Built from scratch by Nathan. Hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
